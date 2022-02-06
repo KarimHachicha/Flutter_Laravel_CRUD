@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
-
 import 'DashboardPage.dart';
+import 'EditList.dart';
 
 void main() {
   runApp(const MyApp());
@@ -61,113 +61,130 @@ class _MyHomePageState extends State<MyHomePage> {
             child: Padding(
                 padding:
                     EdgeInsets.only(top: 15, bottom: 0, left: 10, right: 10),
-                child: MaterialButton(
-                    onPressed: () {},
+                child: Container(
                     child: Column(children: [
-                      SizedBox(height: 15),
-                      Row(children: [
-                        Expanded(
-                            child: MaterialButton(
-                                onPressed: () {},
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                  height: 50,
-                                  width: 150,
-                                  child: Text(
-                                    "Ajouter Produit",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ))),
-                      ]),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(children: [
-                        Expanded(
-                            child: MaterialButton(
-                                onPressed: () {},
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                  height: 50,
-                                  width: 150,
-                                  child: Text(
-                                    "Modifier Produit",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ))),
-                      ]),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(children: [
-                        Expanded(
-                            child: MaterialButton(
-                                onPressed: () {},
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                  height: 50,
-                                  width: 150,
-                                  child: Text(
-                                    "Supprimer Produit",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ))),
-                      ]),
-                      SizedBox(
-                        height: 10,
-                      ),
-                      Row(children: [
-                        Expanded(
-                            child: MaterialButton(
-                                onPressed: () {
-                                  Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) => DashboardPage()),
-                                  );
-                                },
-                                child: Container(
-                                  alignment: Alignment.center,
-                                  decoration: BoxDecoration(
-                                    color: Colors.grey[300],
-                                    borderRadius: BorderRadius.circular(20.0),
-                                  ),
-                                  height: 50,
-                                  width: 150,
-                                  child: Text(
-                                    "Afficher Produit",
-                                    style: TextStyle(
-                                      color: Colors.black,
-                                      fontWeight: FontWeight.bold,
-                                      fontSize: 15,
-                                    ),
-                                  ),
-                                ))),
-                      ]),
-                    ])))));
+                  SizedBox(height: 15),
+                  Row(children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      child: MaterialButton(
+                          onPressed: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            height: 50,
+                            width: 150,
+                            child: Text(
+                              "Ajouter Produit",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                          )),
+                    )),
+                  ]),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      child: MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => EditList()),
+                            );
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            height: 50,
+                            width: 150,
+                            child: Text(
+                              "Modifier Produit",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                          )),
+                    )),
+                  ]),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      child: MaterialButton(
+                          onPressed: () {},
+                          child: Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            height: 50,
+                            width: 150,
+                            child: Text(
+                              "Supprimer Produit",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                          )),
+                    )),
+                  ]),
+                  SizedBox(
+                    height: 10,
+                  ),
+                  Row(children: [
+                    Expanded(
+                        child: Container(
+                      alignment: Alignment.center,
+                      child: MaterialButton(
+                          onPressed: () {
+                            Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => DashboardPage()),
+                            );
+                          },
+                          child: Container(
+                            alignment: Alignment.center,
+                            decoration: BoxDecoration(
+                              color: Colors.grey[300],
+                              borderRadius: BorderRadius.circular(20.0),
+                            ),
+                            height: 50,
+                            width: 150,
+                            child: Text(
+                              "Afficher Produit",
+                              style: TextStyle(
+                                color: Colors.black,
+                                fontWeight: FontWeight.bold,
+                                fontSize: 15,
+                              ),
+                            ),
+                          )),
+                    )),
+                  ]),
+                ])))));
   }
 }
