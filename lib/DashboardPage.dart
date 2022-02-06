@@ -1,6 +1,7 @@
 // ignore: file_names
 // ignore_for_file: non_constant_identifier_names, must_be_immutable, unnecessary_brace_in_string_interps, unused_field, missing_return, file_names, prefer_const_constructors, prefer_const_literals_to_create_immutables
 
+import 'package:crud_laravel_test_/EditList.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatelessWidget {
@@ -9,6 +10,8 @@ class DashboardPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     // All used variables declaration must be here
+
+    // Stock Variables
     var stockChicha = 0;
     var stockCafe = 0;
     var stockEau = 0;
@@ -16,10 +19,18 @@ class DashboardPage extends StatelessWidget {
     var stockJus = 0;
     var stockBoisson = 0;
 
+    // Prix Variables
+    var prixCafe = 1;
+    var prixEau = 1;
+    var prixCrepe = 3;
+    var prixJus = 4;
+    var prixChicha = 5;
+    var prixBoisson = 2;
+
     return Scaffold(
-      backgroundColor: Colors.black,
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        backgroundColor: Colors.black,
+        backgroundColor: Colors.white,
         leading: IconButton(
           onPressed: () {
             Navigator.pop(context);
@@ -27,7 +38,7 @@ class DashboardPage extends StatelessWidget {
           icon: Icon(
             Icons.arrow_back_ios,
             size: 20,
-            color: Colors.grey,
+            color: Colors.black,
           ),
         ),
       ),
@@ -50,7 +61,7 @@ class DashboardPage extends StatelessWidget {
                             color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(20.0),
                           ),
-                          height: 150,
+                          height: 170,
                           width: double.infinity,
                           child: Column(
                             children: [
@@ -74,12 +85,19 @@ class DashboardPage extends StatelessWidget {
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
+                              SizedBox(height: 5),
                               Text(" en stock : $stockCafe ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
+                              Text(" Prix : $prixCafe DT ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
                             ],
                           )),
                     ),
@@ -91,68 +109,21 @@ class DashboardPage extends StatelessWidget {
                     child: MaterialButton(
                       onPressed: () {},
                       child: Container(
-                          height: 150,
-                          width: double.infinity,
                           decoration: BoxDecoration(
                             color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(20.0),
                           ),
-                          child: Column(
-                            children: [
-                              Container(
-                                  height: 100.0,
-                                  width: 100.0,
-                                  padding: EdgeInsets.all(55.0),
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                    image: AssetImage(
-                                      'assets/coffee.png',
-                                    ),
-
-                                    //color: Colors.grey[300],
-                                    // borderRadius: BorderRadius.circular(20.0),
-                                  ))),
-                              Text("Boisson ",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                  )),
-                              Text("en stock : $stockBoisson",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                  )),
-                            ],
-                          )),
-                    ),
-                  ),
-                ]),
-                SizedBox(
-                  height: 15,
-                ),
-                Row(children: [
-                  Expanded(
-                    child: MaterialButton(
-                      onPressed: () {},
-                      child: Container(
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          height: 150,
+                          height: 170,
                           width: double.infinity,
                           child: Column(
                             children: [
                               Container(
-                                  height: 90,
-                                  width: 90,
+                                  height: 80,
+                                  width: 80,
                                   margin: const EdgeInsets.only(
                                     top: 10,
-                                    bottom: 5,
+                                    bottom: 10,
                                   ),
-                                  padding: EdgeInsets.all(55.0),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                     image: AssetImage('assets/coffee.png'),
@@ -160,66 +131,20 @@ class DashboardPage extends StatelessWidget {
                                     //color: Colors.grey[300],
                                     // borderRadius: BorderRadius.circular(20.0),
                                   ))),
-                              Text("Jus ",
+                              Text(" Jus ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
-                              Text("en stock : $stockJus",
+                              SizedBox(height: 5),
+                              Text(" en stock : $stockJus ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
-                            ],
-                          )),
-                    ),
-                  ),
-                  SizedBox(
-                    width: 0,
-                  ),
-                  Expanded(
-                    child: MaterialButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('En cours de développement')),
-                        );
-                      },
-                      child: Container(
-                          height: 150,
-                          width: double.infinity,
-                          decoration: BoxDecoration(
-                            color: Colors.grey[300],
-                            borderRadius: BorderRadius.circular(20.0),
-                          ),
-                          child: Column(
-                            children: [
-                              Container(
-                                  height: 80.0,
-                                  width: 80.0,
-                                  margin: const EdgeInsets.only(
-                                    top: 15.0,
-                                    bottom: 10,
-                                  ),
-                                  padding: EdgeInsets.all(55.0),
-                                  decoration: BoxDecoration(
-                                      image: DecorationImage(
-                                    image: AssetImage(
-                                      'assets/coffee.png',
-                                    ),
-
-                                    //color: Colors.grey[300],
-                                    // borderRadius: BorderRadius.circular(20.0),
-                                  ))),
-                              Text("Crépes",
-                                  style: TextStyle(
-                                    color: Colors.black,
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 15,
-                                  )),
-                              Text("en stock : $stockCrepe",
+                              Text(" Prix : $prixJus DT ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
@@ -236,29 +161,23 @@ class DashboardPage extends StatelessWidget {
                 Row(children: [
                   Expanded(
                     child: MaterialButton(
-                      onPressed: () {
-                        ScaffoldMessenger.of(context).showSnackBar(
-                          const SnackBar(
-                              content: Text('En cours de développement')),
-                        );
-                      },
+                      onPressed: () {},
                       child: Container(
                           decoration: BoxDecoration(
                             color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(20.0),
                           ),
-                          height: 150,
+                          height: 170,
                           width: double.infinity,
                           child: Column(
                             children: [
                               Container(
-                                  height: 70,
-                                  width: 100,
+                                  height: 80,
+                                  width: 80,
                                   margin: const EdgeInsets.only(
-                                    top: 15,
+                                    top: 10,
                                     bottom: 10,
                                   ),
-                                  padding: EdgeInsets.all(50.0),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                     image: AssetImage('assets/coffee.png'),
@@ -266,13 +185,20 @@ class DashboardPage extends StatelessWidget {
                                     //color: Colors.grey[300],
                                     // borderRadius: BorderRadius.circular(20.0),
                                   ))),
-                              Text("Eau Minérale",
+                              Text(" Crepes ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
-                              Text("en stock : $stockEau",
+                              SizedBox(height: 5),
+                              Text(" en stock : $stockCrepe ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                              Text(" Prix : $prixCrepe DT ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
@@ -287,29 +213,23 @@ class DashboardPage extends StatelessWidget {
                   ),
                   Expanded(
                     child: MaterialButton(
-                        onPressed: () {
-                          ScaffoldMessenger.of(context).showSnackBar(
-                            const SnackBar(
-                                content: Text('En cours de développement')),
-                          );
-                        },
-                        child: Container(
+                      onPressed: () {},
+                      child: Container(
                           decoration: BoxDecoration(
                             color: Colors.grey[300],
                             borderRadius: BorderRadius.circular(20.0),
                           ),
-                          height: 150,
+                          height: 170,
                           width: double.infinity,
                           child: Column(
                             children: [
                               Container(
-                                  height: 70,
-                                  width: 100,
+                                  height: 80,
+                                  width: 80,
                                   margin: const EdgeInsets.only(
-                                    top: 15,
+                                    top: 10,
                                     bottom: 10,
                                   ),
-                                  padding: EdgeInsets.all(50.0),
                                   decoration: BoxDecoration(
                                       image: DecorationImage(
                                     image: AssetImage('assets/coffee.png'),
@@ -317,21 +237,134 @@ class DashboardPage extends StatelessWidget {
                                     //color: Colors.grey[300],
                                     // borderRadius: BorderRadius.circular(20.0),
                                   ))),
-                              Text("Chicha",
+                              Text(" Eau Minérale ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
-                              Text("en stock : $stockChicha",
+                              SizedBox(height: 5),
+                              Text(" en stock : $stockEau ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                              Text(" Prix : $prixEau DT ",
                                   style: TextStyle(
                                     color: Colors.black,
                                     fontWeight: FontWeight.bold,
                                     fontSize: 15,
                                   )),
                             ],
+                          )),
+                    ),
+                  ),
+                ]),
+                SizedBox(
+                  height: 15,
+                ),
+                Row(children: [
+                  Expanded(
+                    child: MaterialButton(
+                      onPressed: () {},
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(20.0),
                           ),
-                        )),
+                          height: 170,
+                          width: double.infinity,
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 80,
+                                  width: 80,
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                    bottom: 10,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                    image: AssetImage('assets/coffee.png'),
+
+                                    //color: Colors.grey[300],
+                                    // borderRadius: BorderRadius.circular(20.0),
+                                  ))),
+                              Text(" Boissons ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                              SizedBox(height: 5),
+                              Text(" en stock : $stockBoisson ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                              Text(" Prix : $prixBoisson DT ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                            ],
+                          )),
+                    ),
+                  ),
+                  SizedBox(
+                    width: 0,
+                  ),
+                  Expanded(
+                    child: MaterialButton(
+                      onPressed: () {},
+                      child: Container(
+                          decoration: BoxDecoration(
+                            color: Colors.grey[300],
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          height: 170,
+                          width: double.infinity,
+                          child: Column(
+                            children: [
+                              Container(
+                                  height: 80,
+                                  width: 80,
+                                  margin: const EdgeInsets.only(
+                                    top: 10,
+                                    bottom: 10,
+                                  ),
+                                  decoration: BoxDecoration(
+                                      image: DecorationImage(
+                                    image: AssetImage('assets/coffee.png'),
+
+                                    //color: Colors.grey[300],
+                                    // borderRadius: BorderRadius.circular(20.0),
+                                  ))),
+                              Text(" Chicha ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                              SizedBox(height: 5),
+                              Text(" en stock : $stockChicha ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                              Text(" Prix : $prixChicha DT ",
+                                  style: TextStyle(
+                                    color: Colors.black,
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 15,
+                                  )),
+                            ],
+                          )),
+                    ),
                   ),
                 ])
               ],
